@@ -1,34 +1,71 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-// подключаем главную страницу
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
+// layout EMPTY (registr + login)
   {
     path:'/login',
     name:'login',
-    // в роутере есть объект meta и мы можем передавать свои кастомные свойства - пример
-    // meta:{layout:'empty'}  название лейаута empty
-    // ссылка на пример как подключать layouts - https://www.youtube.com/watch?v=Pm2aASoksJU&list=PLqKQF2ojwm3njNpksFCi8o-_c-9Vva_W0&index=3
-    // Смотреть файл App.vue там подключаем лейауты все !!!!
+    // cm README описание, как работают лейауты
     meta:{layout:'empty'},
     component: () => import('../views/Login.vue')
+  },
+  {
+    path:'/register',
+    name:'register',
+    // cm README описание, как работают лейауты
+    meta:{layout:'empty'},
+    component: () => import('../views/Register.vue')
+  },
+
+// ______________________________________
+// layout Main , all pages
+  {
+    path: '/',
+    name: 'home',
+    meta: {layout: 'main'},
+    component: () => import('../views/Home.vue')
   },
   {
     path:'/categories',
     name:'categories',
     meta:{layout:'main'},
     component: () => import('../views/Categories.vue')
-  }
-
+  },
+  {
+    // динамические роуты по id
+    path:'/detail/:id',
+    name:'detail',
+    meta:{layout:'main'},
+    component: () => import('../views/Detail.vue')
+  },
+  {
+    path:'/history',
+    name:'history',
+    meta:{layout:'main'},
+    component: () => import('../views/History.vue')
+  },
+  {
+    path:'/planning',
+    name:'planning',
+    meta:{layout:'main'},
+    component: () => import('../views/Planning.vue')
+  },
+  {
+    path:'/profile',
+    name:'profile',
+    meta:{layout:'main'},
+    component: () => import('../views/Profile.vue')
+  },
+  {
+    path:'/record',
+    name:'record',
+    meta:{layout:'main'},
+    component: () => import('../views/Record.vue')
+  },
 ]
 
 const router = new VueRouter({
