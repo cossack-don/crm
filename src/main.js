@@ -15,8 +15,18 @@ import messagePlagin from '@/utils/message.plagin.js'
 // javascript из materialize
 import 'materialize-css/dist/js/materialize.min'
 
+// firebase
+import firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebase/database'
+
+// 
+// 
+// 
 Vue.config.productionTip = false
 
+// 
+// 
 // плагин подключаю
 Vue.use(messagePlagin)
 
@@ -26,8 +36,30 @@ Vue.use(Vuelidate)
 // регистрируем наш собственный фильтер
 Vue.filter('date', dateFilter);
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+// 
+// 
+// init firebase app config
+firebase.initializeApp({
+  apiKey: "AIzaSyCU7qEsYk_iCLPj0NZyIZWoIJD_jkLrqdM",
+  authDomain: "crm-vue-2021.firebaseapp.com",
+  projectId: "crm-vue-2021",
+  storageBucket: "crm-vue-2021.appspot.com",
+  messagingSenderId: "393694637780",
+  appId: "1:393694637780:web:14e739f8d4f408ece85541"
+});
+
+
+let app
+
+// авторизация через firebase
+firebase.auth().onAuthStateChanged(() => {
+
+  if (!app) {
+    app = new Vue({
+      router,
+      store,
+      render: h => h(App)
+    }).$mount('#app')
+  }
+
+})

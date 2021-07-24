@@ -70,6 +70,7 @@
 </template>
 
 <script>
+// плагин валидейт
 import { email, minLength, required } from "vuelidate/lib/validators";
 // нативный плагин
 import messages from "@/utils/messages";
@@ -83,27 +84,32 @@ export default {
     email: { email, required },
     password: { required, minLength: minLength(6) },
   },
+  // хук
   mounted() {
-    // окошечко "вы вышли из системы"
+    // окошечко-попап "вы вышли из системы"
     if (messages[this.$route.query.message]) {
       this.$message(messages[this.$route.query.message]);
     }
   },
   methods: {
-    submitHandler() {
+    async submitHandler() {
       // вилидируем email input
       if (this.$v.$invalid) {
         this.$v.$touch();
         return;
       }
 
+      // данные для отправки на сервер(бек)
       const formData = {
         email: this.email,
         password: this.password,
       };
-      // console.log(formData);
-      // переходим на главную страницу
-      this.$router.push("/");
+      // делаем проверку, если пароль и логин совпадает с тем что в firebase, переходим на главную страницу
+      try {
+        await this.$store.dispatch("login", formData);
+        // переходим на главную страницу
+        this.$router.push("/");
+      } catch (e) {}
     },
   },
 };
