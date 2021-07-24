@@ -106,7 +106,7 @@ export default {
   },
 
   methods: {
-    submitHandler() {
+    async submitHandler() {
       // проверка на валидность формы
       if (this.$v.$invalid) {
         this.$v.$touch();
@@ -118,9 +118,14 @@ export default {
         password: this.password,
         name: this.name,
       };
-      console.log(formData);
-      // переходим на главную страницу
-      this.$router.push("/");
+
+      try {
+        await this.$store.dispatch("register", formData);
+        // переходим на главную страницу
+        this.$router.push("/");
+      } catch (e) {
+        console.log(e);
+      }
     },
   },
 };
