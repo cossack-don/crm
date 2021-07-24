@@ -71,6 +71,8 @@
 
 <script>
 import { email, minLength, required } from "vuelidate/lib/validators";
+// нативный плагин
+import messages from "@/utils/messages";
 
 export default {
   name: "login",
@@ -81,7 +83,12 @@ export default {
     email: { email, required },
     password: { required, minLength: minLength(6) },
   },
-
+  mounted() {
+    // окошечко "вы вышли из системы"
+    if (messages[this.$route.query.message]) {
+      this.$message(messages[this.$route.query.message]);
+    }
+  },
   methods: {
     submitHandler() {
       // вилидируем email input

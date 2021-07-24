@@ -8,10 +8,17 @@ import store from './store'
 // компонент dateFilter - для часов в header
 import dateFilter from '@/filters/date.filters.js'
 
+// плагины (свои самописные)
+import messagePlagin from '@/utils/message.plagin.js'
+
+
 // javascript из materialize
 import 'materialize-css/dist/js/materialize.min'
 
 Vue.config.productionTip = false
+
+// плагин подключаю
+Vue.use(messagePlagin)
 
 // подключаем плагин VueValidate - https://vuelidate.js.org/#getting-started
 Vue.use(Vuelidate)
