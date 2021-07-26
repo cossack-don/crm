@@ -7,9 +7,13 @@ import store from './store'
 // нативные компоненты
 // компонент dateFilter - для часов в header
 import dateFilter from '@/filters/date.filters.js'
+import currencyFilter from '@/filters/currency.filters.js'
 
 // плагины (свои самописные)
 import messagePlagin from '@/utils/message.plagin.js'
+
+// loader для всего приложения можно использовать
+import Loader from '@/components/app/Loader'
 
 
 // javascript из materialize
@@ -35,7 +39,10 @@ Vue.use(Vuelidate)
 
 // регистрируем наш собственный фильтер
 Vue.filter('date', dateFilter);
+Vue.filter('currency', currencyFilter);
 
+// регистрирую компонент глобально (Лоадер)
+Vue.component('Loader',Loader)
 // 
 // 
 // init firebase app config

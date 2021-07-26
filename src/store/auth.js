@@ -36,10 +36,13 @@ export default {
             // если в юзере есть возвращаем id иначе нулл
             return user ? user.uid : null
         },
-        async logout() {
+        async logout({commit}) {
             // возвращает промис
             // выходим из аккаунта с которого входили
             await firebase.auth().signOut()
+
+            // 
+             commit('clearInfo')
         }
     },
 }

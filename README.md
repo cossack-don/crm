@@ -17,3 +17,6 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+<!-- https://fixer.io/quickstart  - для валюты АПИ до 1 000 запросов в месяц -->
+<!-- дают ключ при регистрации -->
