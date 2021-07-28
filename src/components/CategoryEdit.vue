@@ -81,7 +81,7 @@ export default {
     async submitHandler() {
       // проверка на валидность
       if (this.$v.$invalid) {
-        this.$v.touch();
+        this.$v.$touch();
         return;
       }
 
