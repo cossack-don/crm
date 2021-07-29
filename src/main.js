@@ -9,6 +9,10 @@ import store from './store'
 import dateFilter from '@/filters/date.filters.js'
 import currencyFilter from '@/filters/currency.filters.js'
 
+// Директивы
+import tooltipDirective from '@/directives/tooltip.directive.js'
+
+
 // плагины (свои самописные)
 import messagePlagin from '@/utils/message.plagin.js'
 
@@ -23,6 +27,7 @@ import 'materialize-css/dist/js/materialize.min'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
+
 
 // 
 // 
@@ -40,6 +45,9 @@ Vue.use(Vuelidate)
 // регистрируем наш собственный фильтер
 Vue.filter('date', dateFilter);
 Vue.filter('currency', currencyFilter);
+
+// регистрируем глобально директиву
+Vue.directive('tooltip',tooltipDirective)
 
 // регистрирую компонент глобально (Лоадер)
 Vue.component('Loader',Loader)
