@@ -42,7 +42,7 @@ JavaScript, Vue - 2, Firebase (database, auth), API Fixer (Валюты), Vue ch
 Страница новая запись. Можно создать новую категорию дохода/расхода, указать сумму и описание.
 ```
 
-![screenshot_2](preview-screen-shot/createPost-page.jpg)
+![screenshot_2](preview-screen-shot/create-post.jpg)
 
 
 <!-- 6 -->
