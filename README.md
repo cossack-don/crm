@@ -1,4 +1,13 @@
 # crm
+page-auth
+
+![screenshot_1](preview-screen-shot/auth.jpg)
+
+page-main 
+
+![screenshot_2](preview-screen-shot/main-page.jpg)
+
+
 
 ## Project setup
 ```
