@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import Vuelidate from 'vuelidate'
+// импортируем пагинацию плагин вью
+import Paginate from 'vuejs-paginate'
+// 
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -51,6 +54,10 @@ Vue.directive('tooltip',tooltipDirective)
 
 // регистрирую компонент глобально (Лоадер)
 Vue.component('Loader',Loader)
+// компонент-плагин пагинация
+Vue.component('Paginate',Paginate)
+
+
 // 
 // 
 // init firebase app config
