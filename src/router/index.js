@@ -5,6 +5,7 @@ import firebase from 'firebase/app';
 Vue.use(VueRouter)
 
 const routes = [
+  
 // layout EMPTY (registr + login)
   {
     path:'/login',
@@ -69,6 +70,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes
 })
 
