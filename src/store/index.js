@@ -28,7 +28,7 @@ export default new Vuex.Store({
     const key = process.env.VUE_APP_FIXER
     
     // пуляю запрос на АПИ И через query параметры получаю конкретные данные какие нам нужны по валютам
-    const res = await fetch(`http://data.fixer.io/api/latest?access_key=${key}&symbols=USD,EUR,RUB`)
+    const res = await fetch(`http://data.fixer.io/api/latest?access_key=27a9d68de2d111797e85be61e280e37b&symbols=USD,EUR,RUB`)
     return await res.json()
   }
   },

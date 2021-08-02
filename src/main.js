@@ -11,6 +11,8 @@ import store from './store'
 // компонент dateFilter - для часов в header
 import dateFilter from '@/filters/date.filters.js'
 import currencyFilter from '@/filters/currency.filters.js'
+import localizeFilter from '@/filters/localize.filter.js'
+
 
 // Директивы
 import tooltipDirective from '@/directives/tooltip.directive.js'
@@ -48,6 +50,8 @@ Vue.use(Vuelidate)
 // регистрируем наш собственный фильтер
 Vue.filter('date', dateFilter);
 Vue.filter('currency', currencyFilter);
+Vue.filter('localize',localizeFilter)
+
 
 // регистрируем глобально директиву
 Vue.directive('tooltip',tooltipDirective)

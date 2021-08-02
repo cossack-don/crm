@@ -18,7 +18,7 @@
         <small
           class="helper-text invalid"
           v-if="$v.email.$dirty && !$v.email.required"
-          >ПолеEmail не должно быть пустым</small
+          >Поле Email не должно быть пустым</small
         >
         <small
           class="helper-text invalid"
