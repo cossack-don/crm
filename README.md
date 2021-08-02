@@ -59,7 +59,7 @@ JavaScript, Vue - 2, Firebase (database, auth), API Fixer (Валюты), Vue ch
 ```
 
 <!-- не сделал еще -->
-<!-- ![screenshot_2](preview-screen-shot/category-page.jpg) -->
+![screenshot_2](preview-screen-shot/page-profile.jpg)
 
 
 
